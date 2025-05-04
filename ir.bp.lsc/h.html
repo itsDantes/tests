@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انیمیشن چرخش باکس با Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+  <div class="relative">
+    <div class="watch-item w-48 h-48 bg-blue-500 text-white flex justify-center items-center rounded-lg text-xl">
+      <div class="refresh absolute top-2 left-2 p-2 bg-white bg-opacity-70 rounded-full cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#000" d="M5.463 4.433A9.96 9.96 0 0 1 12 2c5.523 0 10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228zm13.074 15.134A9.96 9.96 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772z"/>
+        </svg>
+      </div>
+      GOOGLE
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $(".refresh").click(function() {
+        var watchItem = $(this);
+        watchItem.addClass("animate-spin");
+
+        // Reset the animation after it ends
+        setTimeout(function() {
+          watchItem.removeClass("animate-spin");
+        }, 1000);  // 1000ms to match animation duration
+      });
+    });
+  </script>
+</body>
+</html>
